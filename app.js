@@ -14,20 +14,20 @@ async function main({name, email, phone, comment}){
 
     // create reusable transporter object using the default SMTP transport
     let transporter = nodemailer.createTransport({
-        host: 'smtp.ethereal.email',
+        host: 'smtp.yandex.ru',
         port: 587,
         auth: {
-            user: 'easter.hegmann64@ethereal.email',
-            pass: 'qEs5RNE8WJbsRAT4Nr'
+            user: 'tocontact@pfactory.ru',
+            pass: 'Deal223423'
         }
     });
 
     // send mail with defined transport object
     let info = await transporter.sendMail({
-        from: 'easter.hegmann64@ethereal.email', // sender address
-        to: email, // list of receivers
+        from: 'tocontact@pfactory.ru', // sender address
+        to: 'contact@pfactory.ru', // list of receivers
         subject: "Заявка ✔", // Subject line
-        text: `Данные: ${name}(${phone}), комментарий: ${comment}`, // plain text body
+        text: `Данные: ${name}(${phone}), email: ${email}, комментарий: ${comment}`, // plain text body
     });
 
     console.log("Message to sent 2: %s", info.messageId);
